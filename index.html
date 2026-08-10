@@ -97,24 +97,64 @@ footer{padding:34px 0 45px;color:var(--muted);font-size:11px;text-align:center}
   .mobile-bar a{flex:1;text-align:center;padding:11px 8px;border-radius:9px;color:#fff;text-decoration:none;font-size:11px;font-weight:800}.mobile-call{background:#24373f}.mobile-wa{background:#1f9d58}
 }
 
-/* Mobile: keep the header phone CTA on one line */
+/* Refined mobile header */
 @media (max-width: 760px){
-  .navlink{
-    white-space: nowrap;
-    font-size: 11px;
-    padding: 8px 10px;
+  .site-nav .container{
+    padding-left:16px;
+    padding-right:16px;
   }
 
-  nav{
-    gap: 10px;
+  .nav-inner{
+    gap:10px;
+    align-items:center;
   }
 
   .brand{
-    white-space: nowrap;
-    font-size: 17px;
+    flex:1 1 auto;
+    min-width:0;
+    white-space:nowrap;
+    font-size:16px;
+    line-height:1.05;
+  }
+
+  .brand span{
+    font-size:8px;
+    letter-spacing:.08em;
+    white-space:nowrap;
+  }
+
+  .nav-links{
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    gap:0;
+  }
+
+  .nav-links > a:not(.nav-call){
+    display:none;
+  }
+
+  .nav-call{
+    display:inline-flex !important;
+    align-items:center;
+    justify-content:center;
+    white-space:nowrap;
+    min-width:0;
+    height:38px;
+    padding:0 12px;
+    border-radius:8px;
+    font-size:10px;
+    line-height:1;
+    letter-spacing:.02em;
   }
 }
 
+.nav-call .call-number{
+  display:inline-block;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:.01em;
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Dr. Mayank Singh","telephone":"+91-7982167811","url":"https://dr-mayank-singh.netlify.app/","description":"BDS, MDS Periodontist and Implantologist offering periodontal care, dental implant treatment and related oral surgical procedures across Delhi NCR."}
@@ -126,7 +166,7 @@ footer{padding:34px 0 45px;color:var(--muted);font-size:11px;text-align:center}
     <a class="brand" href="#top">Dr. Mayank Singh<span>Periodontist · Implantologist</span></a>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#about">About</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#consultation">Contact</a>
-      <a class="nav-call" href="tel:+917982167811">Call +91 79-82167811</a>
+      <a class="nav-call" href="tel:+917982167811">Call <span class="call-number">+91 79-82167811</span></a>
     </nav>
   </div>
 </header>
@@ -223,3 +263,4 @@ footer{padding:34px 0 45px;color:var(--muted);font-size:11px;text-align:center}
 <div class="mobile-bar"><a class="mobile-call" href="tel:+917982167811">Call</a><a class="mobile-wa" href="https://wa.me/917982167811?text=Hello%20Dr.%20Mayank%20Singh%2C%20I%20would%20like%20to%20book%20a%20dental%20consultation." target="_blank" rel="noopener">WhatsApp</a></div>
 </body>
 </html>
+```
